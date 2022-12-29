@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #1E1E24;
+    color: #ffffff;
+}
+
+.navigation_bar {
+    z-index: 2;
+    background-color: #EFC69B;
+    overflow: hidden;
+    text-align: center;
+    padding-left: 40%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navigation_bar a {
+    float: left;
+    color: #333333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 19px;
+}
+
+.navigation_bar a:hover {
+    background-color: #202020;
+    color: #ffffff;
+}
+
+.navigation_bar a.active {
+    background-color: #DF9B6D;
+    color: #202020;
+}
+
+.introduction {
+    animation: fadeIn ease 3s;
+    -webkit-animation: fadeIn ease 10s;
+    -moz-animation: fadeIn ease 10s;
+    -o-animation: fadeIn ease 10s;
+    -ms-animation: fadeIn ease 10s;
+    font-size: 24px;
+    padding-left: 350px;
+    padding-top: 60px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.main_img {
+    margin-top: -150px;
+    margin-left: 1000px;
+}
+
+.btn_read_further {
+    border: none;
+    color: white;
+    background-color: #FF8A5B;
+    padding: 16px 400px;
+    font-size: 24px;
+    /* margin-top: -1000px; */
+    /* margin-bottom: 250px; */
+    margin-left: 50px;
+}
+
+.yt_video {
+    animation: fadeIn ease 50s;
+    -webkit-animation: fadeIn ease 10s;
+    -moz-animation: fadeIn ease 10s;
+    -o-animation: fadeIn ease 10s;
+    -ms-animation: fadeIn ease 10s;
+    margin: 0 auto;
+    display: block;
+}
+
+.article {
+    font-size: 32px;
+    margin-top: 125px;
+    text-align: center;
+}
+
+.row {
+    margin-left: 500px;
+    margin-top: 250px;
+    display: flex;
+}
+
+.column {
+    flex: 33.33%;
+    padding: 5px;
+}
+
+img.article_img_julia:hover,
+img.article_img_julia:focus {
+    height: 500px;
+    width: auto;
+}
+
+img.article_img_sierpinski:hover,
+img.article_img_sierpinski:focus {
+    height: 500px;
+    width: auto;
+}
+
+.glcanvas {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 250px;
+    display: block;
+    width: 800px;
+}
+
+.zoom_input {
+    position: absolute;
+    width: 100px;
+    height: 25px;
+    z-index: 15;
+    top: 50%;
+    left: 50%;
+    margin: 300px 0 0 -150px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #EFC69B;
+    text-align: center;
+    height: 25px;
+}
+
+.footer_link {
+    color: #333333;
+    text-decoration: none;
+    font-size: 19px;
+    padding-right: 25px;
+}
+
+.sidebar {
+    height: 100%;
+    width: 150px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-top: 40px;
+    background-color: lightblue;
+}
+
+.sidebar div {
+    padding: 8px;
+    font-size: 24px;
+    display: block;
+}
+
+.body-text {
+    margin-left: 150px;
+    font-size: 18px;
+}
