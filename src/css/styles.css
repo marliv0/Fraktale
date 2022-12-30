@@ -81,14 +81,18 @@ iframe {
     left: 0;
     max-width: 100%;
     width: 100%;
-    height: 100%;
+    height: 56.25%;
     pointer-events: none;
 }
 
 .introduction {
     font-size: 24px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
     display: inline-block;
-    margin: 60% 15%;
+    /* margin: 90% 15%; */
 }
 
 .intro_paragraph {
@@ -101,7 +105,7 @@ iframe {
     max-width: 100%;
     height: auto;
     display: inline-block;
-    padding-top: -20%;
+    padding-top: -10%;
     padding-left: 60%;
 }
 
@@ -156,7 +160,7 @@ img.article_img_sierpinski:focus {
 }
 
 footer {
-    z-index:3;
+    z-index: 3;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -172,7 +176,7 @@ footer a {
     color: #333333;
     text-decoration: none;
     font-size: 19px;
-    text-align:center;
+    text-align: center;
 }
 
 footer a:hover {
