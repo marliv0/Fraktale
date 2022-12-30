@@ -36,7 +36,7 @@ float n = 0.0;
 float threshold = 100.0;
 
 float mandelbrot(vec2 c) {
- const int itr = 500;
+ const int itr = 400;
  vec2 z = vec2(0.0, 0.0);
 
  for(int i = 0; i < itr; i++){

@@ -20,8 +20,9 @@ function createImgElements(urls) {
 
 const KEYWORD = "fractal";
 const AMOUNT = Math.floor(Math.random() * 80) + 15
+const PAGE = Math.floor(Math.random() * 4) + 1
 
-fetch(`https://api.pexels.com/v1/search?query=${KEYWORD}&per_page=${AMOUNT}&page=1`, {
+fetch(`https://api.pexels.com/v1/search?query=${KEYWORD}&per_page=${AMOUNT}&page=${PAGE}`, {
         headers: {
             Authorization: "563492ad6f9170000100000102b516d3cf6245c1a66e3a166bd573b3",
             // per_page: 80,

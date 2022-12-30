@@ -1,3 +1,4 @@
-function scrollTo() {
-    document.querySelector(".introduction").scrollIntoView();
+function a() {
+    console.log("clicked...");
+    // document.querySelector(".introduction").scrollIntoView();
 }

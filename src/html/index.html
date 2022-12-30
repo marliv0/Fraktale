@@ -37,37 +37,46 @@
       <h1>Was ist ein Fraktal?</h1>
       <p class="intro_paragraph">
         Fraktal ist ein vom Mathematiker Benoît Mandelbrot 1975 geprägter Begriff, <br>
-        der bestimmte natürliche oder künstliche Gebilde oder geometrische Muster bezeichnet.<br> <!-- </p><p> -->
+        der bestimmte natürliche oder künstliche Gebilde oder geometrische Muster bezeichnet.<br>
         Die bekanntesten Fraktale sind in der gewöhnlichen zweidimensionalen euklidischen Ebene oder im
         dreidimensionalen euklidischen Raum definiert.<br> Zu den bekanntesten Fraktalen gehören: <i
           style="color:darkgray;">...</i>
       </p>
-      <button class="btn_read_further" type="button" onclick="scrollTo()">Weiterlesen</button>
+      <button class="btn_read_further" type="button" onclick="a()">Weiterlesen</button>
     </article>
-    <img class="main_img" src="../../res/main_img.jpg" alt="Bild eines Fraktals" width="800" height="auto">
+    <img 
+      class="main_img"
+      srcset="../../res/main_img.jpg 500w, ../../res/main_img.jpg 1000w, ../../res/main_img.jpg 1500w"
+      sizes="(max-width: 500px) 500px,
+      (max-width: 1000px) 1000px,
+      1500px"
+      alt="Bild eines Fraktals"
+      width="800"
+      height="auto">
   </div>
 
-<div class="article">
-<h2>Artikel</h2>
-<p>Klicken Sie auf das jeweilige Bild, um einen Eintrag über das bestimmte Fraktal zu lesen.</p>
-</div>
+  <div class="article">
+    <h2>Artikel</h2>
+    <p>Klicken Sie auf das jeweilige Bild, um einen Eintrag über das bestimmte Fraktal zu lesen.</p>
+  </div>
 
-<div class="row">
-  <div class="column">
-    <a href="theory_julia.html">
-      <img src="../../res/julia.png" alt="Julia-Menge" width="auto" height="400" class="article_img_julia">
-    </a>
+  <div class="row">
+    <div class="column">
+      <a href="theory_julia.html">
+        <img src="../../res/julia.png" alt="Julia-Menge" width="auto" height="400" class="article_img_julia">
+      </a>
+    </div>
+    <div class="column">
+      <a href="theory_sierpinski.html">
+        <img src="../../res/sierpinski.png" alt="Sierpinski-Dreieck" width="auto" height="400"
+          class="article_img_sierpinski">
+      </a>
+    </div>
   </div>
-  <div class="column">
-    <a href="theory_sierpinski.html">
-    <img src="../../res/sierpinski.png" alt="Sierpinski-Dreieck" width="auto" height="400" class="article_img_sierpinski">
-    </a>
-  </div>
-</div>
 
   <footer>
     <div>
-      <a class="active" href="https://github.com/marliv0/Fraktale/tree/main#copyright">Copyright</a>
+      <a href="https://github.com/marliv0/Fraktale/tree/main#copyright">Copyright</a>
       <a href="https://github.com/marliv0/Fraktale/tree/main#impressum">Impressum</a>
       <a href="https://github.com/marliv0/Fraktale/tree/main#datenschutz">Datenschutz</a>
       <a href="https://github.com/marliv0/Fraktale">Quellcode</a>

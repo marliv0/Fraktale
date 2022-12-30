@@ -101,10 +101,12 @@ iframe {
     max-width: 100%;
     height: auto;
     display: inline-block;
+    padding-top: -20%;
     padding-left: 60%;
 }
 
 .btn_read_further {
+    pointer-events: fill;
     border: none;
     color: white;
     background-color: #FF8A5B;
@@ -154,6 +156,7 @@ img.article_img_sierpinski:focus {
 }
 
 footer {
+    z-index:3;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -162,30 +165,30 @@ footer {
     text-align: center;
     height: 25px;
     text-transform: uppercase;
-    font-weight:bold;
+    font-weight: bold;
 }
 
 footer a {
     color: #333333;
     text-decoration: none;
     font-size: 19px;
-    padding-right: 25px;
+    text-align:center;
+}
+
+footer a:hover {
+    color: #ffffff;
+    background-color: #202020;
 }
 
 .sidebar {
     height: 100%;
-    width: 150px;
+    width: 100px;
     position: absolute;
     left: 0;
     top: 0;
-    /* padding-top: 40px; */
-    background-color: lightblue;
-}
-
-.sidebar div {
-    padding: 8px;
-    font-size: 24px;
-    display: block;
+    background-color: #df9b6d;
+    padding-top: 3%;
+    padding-left: 4%;
 }
 
 .body-text {
