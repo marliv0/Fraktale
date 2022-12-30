@@ -1,8 +1,11 @@
+/* Font, welcher benutzt wird */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
 html {
     scroll-behavior: smooth;
     font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -10,100 +13,95 @@ body {
     color: #ffffff;
 }
 
-.navigation_bar {
-    z-index: 2;
-    background-color: #EFC69B;
-    overflow: hidden;
-    text-align: center;
-    padding-left: 40%;
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-.navigation_bar a {
+.navbar a {
     float: left;
     color: #333333;
     text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
     font-size: 19px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
-.navigation_bar a:hover {
+.navbar a:hover {
     background-color: #202020;
     color: #ffffff;
 }
 
-.navigation_bar a.active {
+.navbar a.active {
     background-color: #DF9B6D;
     color: #202020;
 }
 
+.navbar {
+    z-index: 3;
+    background-color: #EFC69B;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    position: fixed;
+    top: 0;
+}
+
+nav {
+    float: left;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style-type: none;
+}
+
+nav>ul>li>a {
+    display: block;
+    line-height: 2em;
+    padding: 0.5em 1em;
+    text-decoration: none;
+}
+
+.logo {
+    float: left;
+    position: relative;
+    margin: 10px 15px 15px 10px;
+}
+
+iframe {
+    padding-top: 2.8%;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
 .introduction {
-    animation: fadeIn ease 3s;
-    -webkit-animation: fadeIn ease 10s;
-    -moz-animation: fadeIn ease 10s;
-    -o-animation: fadeIn ease 10s;
-    -ms-animation: fadeIn ease 10s;
     font-size: 24px;
-    padding-left: 350px;
-    padding-top: 60px;
+    display: inline-block;
+    margin: 60% 15%;
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@-moz-keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@-webkit-keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@-o-keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@-ms-keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
+.intro_paragraph {
+    font-size: 24px;
+    word-wrap: break-word;
 }
 
 .main_img {
-    margin-top: -150px;
-    margin-left: 1000px;
+    width: 50%;
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+    padding-left: 60%;
 }
 
 .btn_read_further {
@@ -112,36 +110,25 @@ body {
     background-color: #FF8A5B;
     padding: 16px 400px;
     font-size: 24px;
-    /* margin-top: -1000px; */
-    /* margin-bottom: 250px; */
     margin-left: 50px;
-}
-
-.yt_video {
-    animation: fadeIn ease 50s;
-    -webkit-animation: fadeIn ease 10s;
-    -moz-animation: fadeIn ease 10s;
-    -o-animation: fadeIn ease 10s;
-    -ms-animation: fadeIn ease 10s;
-    margin: 0 auto;
-    display: block;
 }
 
 .article {
     font-size: 32px;
-    margin-top: 125px;
+    margin-top: -50%;
     text-align: center;
 }
 
 .row {
     margin-left: 500px;
-    margin-top: 250px;
+    margin-top: 2%;
+    margin-left: 255;
     display: flex;
 }
 
 .column {
     flex: 33.33%;
-    padding: 5px;
+    /* padding: 5px; */
 }
 
 img.article_img_julia:hover,
@@ -161,22 +148,12 @@ img.article_img_sierpinski:focus {
     padding-right: 0;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 250px;
+    margin-top: 4%;
     display: block;
-    width: 800px;
+    width: 80%;
 }
 
-.zoom_input {
-    position: absolute;
-    width: 100px;
-    height: 25px;
-    z-index: 15;
-    top: 50%;
-    left: 50%;
-    margin: 300px 0 0 -150px;
-}
-
-.footer {
+footer {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -184,9 +161,11 @@ img.article_img_sierpinski:focus {
     background-color: #EFC69B;
     text-align: center;
     height: 25px;
+    text-transform: uppercase;
+    font-weight:bold;
 }
 
-.footer_link {
+footer a {
     color: #333333;
     text-decoration: none;
     font-size: 19px;
@@ -199,7 +178,7 @@ img.article_img_sierpinski:focus {
     position: absolute;
     left: 0;
     top: 0;
-    padding-top: 40px;
+    /* padding-top: 40px; */
     background-color: lightblue;
 }
 

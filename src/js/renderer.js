@@ -1,7 +1,18 @@
+/**
+ * Ein Renderer, welches die Mandelbrot-Menge berechnet
+ * und diese mithilfe von WebGL und Shadern visuell darstellt.
+ * 
+ * 2023 Marko Livajusic (marko_livajusic0 <at> protonmail.com) 
+ */
+
 main();
 
+/**
+ * Vertex-Shader für die Darstellung.
+ * @returns Vertex-Shader in Form eines Strings. Zuständig für die Positionisierung der Eckpunkte.
+ */
 function getVertexShaderSrc() {
-    const src = String.raw`
+    const src = String.raw `
     attribute vec3 aVertexPosition;
     void main() {
         gl_Position = vec4(aVertexPosition, 1.0);
@@ -10,9 +21,13 @@ function getVertexShaderSrc() {
     return src;
 }
 
+/**
+ * Fragment-Shader für die Darstellung. Zuständig für die Berechnung der Mandelbrot-Menge 
+ * und für die Färbung.
+ * @returns Fragment-Shader in Form eines Strings.
+ */
 function getFragmentShaderSrc() {
-    const real = String.raw
-        `
+    const real = String.raw `
 precision mediump float;
 uniform float zoom;
 vec2 offset = vec2(0.0, 0.0);
@@ -46,7 +61,7 @@ vec4 map_to_color(float t) {
 void main(){
  vec2 coord = vec2(gl_FragCoord.xy);
 
- vec2 screenSize = vec2(800, 600);
+ vec2 screenSize = vec2(1920, 1080);
  float t = mandelbrot(((coord - screenSize/2.0)/zoom)-offset);
 
  if(gl_FragCoord.x < 40.0){
@@ -54,13 +69,21 @@ void main(){
  }
  gl_FragColor = map_to_color(float(t));
 }
-    `;
+`;
     return real;
 }
 
 var gl;
 var program;
 
+/**
+ * Stellt den Schattierer (Shader), ein "Programm", welches auf der Grafikkarte läuft, her.
+ * 
+ * @param {*} gl WebGL-Kontext
+ * @param {*} type Typ des Schattierers. Entweder Vertex oder Fragment-Shader.
+ * @param {*} source Der Source-Code des Schattierers in der Stringform.
+ * @returns ID des erstellten Schattierers
+ */
 function createShader(gl, type, source) {
     var shader = gl.createShader(type);
     gl.shaderSource(shader, source);
@@ -74,6 +97,13 @@ function createShader(gl, type, source) {
     return shader;
 }
 
+/**
+ * Stellt das Program auf der Grafikkarte her, welches die beiden Schattierer beinhaltet.
+ * @param {*} gl WebGL-Kontext
+ * @param {*} vertexShader ID des erstellten Vertex-Shaders
+ * @param {*} fragmentShader ID des erstellten Fragment-Shaders
+ * @returns ID des erstellten Programms
+ */
 function createProgram(gl, vertexShader, fragmentShader) {
     var program = gl.createProgram();
     gl.attachShader(program, vertexShader);
@@ -89,6 +119,12 @@ function createProgram(gl, vertexShader, fragmentShader) {
     return program;
 }
 
+/**
+ * Stellt den Puffer her, welcher die Eckpunkte beinhaltet, die gerendert werden.
+ * @param {*} gl WebGL-Kontext
+ * @param {*} data Eckpunkte für das Rendern. Wir rendern in diesem Fall nur ein Rechteck.
+ * @returns ID des erstellten Puffers
+ */
 function createBuffer(gl, data) {
     const vbo = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, vbo);
@@ -97,10 +133,11 @@ function createBuffer(gl, data) {
     return vbo;
 }
 
-function setZoom(gl, program) {
+function changeZoom(gl, program) {
     const value = document.querySelector(".zoom_input").value;
-    const location = gl.getUniformLocation(program, "zoom");
-    gl.uniform1f(location, value);
+    console.log(value);
+    // const location = gl.getUniformLocation(program, "zoom");
+    // gl.uniform1f(location, value);
 }
 
 function main() {
@@ -127,7 +164,8 @@ function main() {
         1.0, 1.0, 0.0,
         1.0, 1.0, 0.0,
         -1.0, 1.0, 0.0,
-        -1.0, -1.0, 0.0]));
+        -1.0, -1.0, 0.0
+    ]));
     const coord = gl.getAttribLocation(program, "aVertexPosition");
     gl.vertexAttribPointer(coord, 3, gl.FLOAT, false, 0, 0);
     gl.enableVertexAttribArray(coord);
