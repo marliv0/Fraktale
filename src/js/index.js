@@ -4,7 +4,15 @@ function a() {
 }
 
 function fillSidebar() {
-    
+    const topics = document.getElementsByClassName("topic");
+    // let topic;
+
+    for (let i = 0; i < topics.length; i++) {
+        const element = document.createElement("li");
+        element.innerText = topics[i].innerText;
+        // element.onclick = document.querySelector()
+        document.getElementById("toc").appendChild(element);
+    }
 }
 
 /*

@@ -27,10 +27,13 @@
     </div>
 
     <div class="sidebar">
+        <ul id="toc">
+            <!-- li -->
+        </ul>
     </div>
 
     <div class="contents">
-        <h1>Fraktale</h1>
+        <h1 class="topic">Fraktale</h1>
         <p>
             Fraktal ist ein vom Mathematiker Benoît Mandelbrot 1975 geprägter Begriff (lateinisch fractus ‚gebrochen‘,
             von
@@ -47,7 +50,7 @@
             Objekte dieser Art unterscheiden sich in wesentlichen Aspekten von gewöhnlichen glatten Figuren.
         </p>
 
-        <h2>Begriff</h2>
+        <h2 class="topic">Begriff</h2>
         <p>
             Der Begriff Fraktal kann sowohl substantivisch als auch adjektivisch verwendet werden. Das Gebiet der
             Mathematik, in dem Fraktale und ihre Gesetzmäßigkeiten untersucht werden, heißt fraktale Geometrie und ragt
@@ -59,9 +62,9 @@
             Sierpiński und Gaston Maurice Julia zu den namensgebenden Mathematikern.
         </p>
 
-        <h1>Beispiele</h1>
+        <h1 class="topic">Beispiele</h1>
 
-        <h2>Mandelbulb</h2>
+        <h2 class="topic">Mandelbulb</h2>
         <p>
             Das Mandelbulb-Fraktal ist ein dreidimensionales Fraktal. Es wurde 2009 von Daniel White und Paul Nylander
             konstruiert. Dazu wurde ein herkömmliches Mandelbrot einer sphärischen Koordinatentransformation unterzogen.
@@ -92,12 +95,49 @@
             <strong>{x,y,z}+{a,b,c} = {x+a, y+b, z+c}</strong>
         </p>
         <img src="../../res/example_mandelbulb.jpg" class="example_mandelbulb">
-    
 
         <br><br><br>
-        <h2>Mandelbrot</h2>
+        <h2 class="topic">Mandelbrot</h2>
+        <p>
+            Die Mandelbrot-Menge, benannt nach Benoît Mandelbrot, ist die Menge der komplexen Zahlen c, für
+            welche die durch die iterative Vorschrift z_n+1 = z_n^2+c mit dem Startwert 0 endlich bleibt, d. h.
+            beschränkt
+            ist.
+        </p>
 
-    
+        <p>
+            Interpretiert man die Mandelbrot-Menge (eine Teilmenge der Gaußsche Zahlenebenen) als geometrische Figur, so
+            ergibt sie ein Fraktal, das im allgemeinen Sprachgebrauch oft Apfelmännchen genannt wird. Bilder berechnet
+            man,
+            indem man jedem Pixel eines Bildes eine komplexe Zahl zuordnet und beginnend mit
+            z = 0 untersucht, ob und wann die Iterationen anfangen, zu „explodieren“. Bleiben die
+            Werte klein, wird das Pixel häufig schwarz gefärbt, kommt es zu einer „Explosion“ der Zahlenwerte, wird die
+            Anzahl der dafür notwendigen Iterationen als Farbe kodiert.
+        </p>
+
+        <p>
+            Die ersten mit einem Computer generierten Darstellungen wurden 1978 von Robert Brooks und Peter Matelski
+            vorgestellt. 1980 veröffentlichte Benoît Mandelbrot eine Arbeit über das Thema. Später wurde sie von
+            Adrien Douady und John Hamal Hubbard in einer Reihe grundlegender mathematischer Arbeiten systematisch
+            untersucht. Die mathematischen Grundlagen dafür wurden bereits 1905 von dem französischen Mathematiker
+            Pierre
+            Fatou erarbeitet.
+        </p>
+
+        <p>
+            Die Mandelbrot-Menge (schwarz) in der komplexen Ebene
+            Definition über Rekursion
+            Die Mandelbrot-Menge ist die Menge aller komplexen
+            Zahlen c, für welche die rekursiv definierte Folge komplexer Zahlen mit dem Anfangsglied
+
+            und dem Bildungsgesetz
+
+            beschränkt bleibt. Das heißt, eine komplexe Zahl c ist Element der Mandelbrotmenge, wenn die Beträge der mit
+            diesem c
+            berechneten nicht über jede Grenze wachsen, unabhängig davon, wie groß
+            wird.
+        </p>
+
     </div>
 
     <footer>
