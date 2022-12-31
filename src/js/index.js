@@ -4,6 +4,7 @@ function a() {
 }
 
 
+/*
 console.log("pain...");
 const text = document.getElementById("pls");
 
@@ -17,4 +18,4 @@ const callback = (entries) => {
 
 // Create the IntersectionObserver
 const observer = new IntersectionObserver(callback, {rootMargin: "10000px 0px 10000px 0px"});
-observer.observe(text);
+observer.observe(text);*/

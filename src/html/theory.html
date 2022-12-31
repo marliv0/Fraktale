@@ -26,16 +26,79 @@
         </nav>
     </div>
 
-    <!-- sidebar -->
     <div class="sidebar">
-        <a class="active" href="">Home</a>
+        <a href="">Home</a>
         <a href="#">News</a>
         <a href="#">Contact</a>
         <a href="#">About</a>
     </div>
 
-    <div class="theory_article">
-        <h1>Mandelbulb</h1>
+    <div class="contents">
+        <h1>Fraktale</h1>
+        <p>
+            Fraktal ist ein vom Mathematiker Benoît Mandelbrot 1975 geprägter Begriff (lateinisch fractus ‚gebrochen‘,
+            von
+            lateinisch "frangere" (in Stücke zer-)brechen), der bestimmte natürliche oder künstliche Gebilde oder
+            geometrische Muster bezeichnet.
+        </p>
+
+        <p>
+            Diese Gebilde oder Muster besitzen im Allgemeinen keine ganzzahlige Hausdorff-Dimension, sondern eine
+            gebrochene
+            – daher der Name – und weisen zudem einen hohen Grad von Skaleninvarianz bzw. Selbstähnlichkeit auf. Das ist
+            beispielsweise der Fall, wenn ein Objekt aus mehreren verkleinerten Kopien seiner selbst besteht.
+            Geometrische
+            Objekte dieser Art unterscheiden sich in wesentlichen Aspekten von gewöhnlichen glatten Figuren.
+        </p>
+
+        <h2>Begriff</h2>
+        <p>
+            Der Begriff Fraktal kann sowohl substantivisch als auch adjektivisch verwendet werden. Das Gebiet der
+            Mathematik, in dem Fraktale und ihre Gesetzmäßigkeiten untersucht werden, heißt fraktale Geometrie und ragt
+            in
+            mehrere andere Bereiche hinein, wie Funktionentheorie, Berechenbarkeitstheorie und dynamische Systeme. Wie
+            der
+            Name schon andeutet, wird der klassische Begriff der euklidischen Geometrie erweitert, was sich auch in den
+            gebrochenen und nicht natürlichen Dimensionen vieler Fraktale widerspiegelt. Neben Mandelbrot gehören Wacław
+            Sierpiński und Gaston Maurice Julia zu den namensgebenden Mathematikern.
+        </p>
+
+        <h1>Beispiele</h1>
+
+        <h2>Mandelbulb</h2>
+        <p>
+            Das Mandelbulb-Fraktal ist ein dreidimensionales Fraktal. Es wurde 2009 von Daniel White und Paul Nylander
+            konstruiert. Dazu wurde ein herkömmliches Mandelbrot einer sphärischen Koordinatentransformation unterzogen.
+            <br>
+            Aber, was ist die Formel für dieses Ding?
+        </p>
+        <p>
+            Es gibt ein paar subtile Variationen, die aber meist auf die gleiche Art von unglaublichen Details
+            hinauslaufen.
+            Im Folgenden ist eine Version aufgeführt. Ähnlich wie das ursprüngliche 2D-Mandelbrot ist die 3D-Formel
+            definiert durch:
+
+            <strong>z = z^n + c</strong>,
+            wobei "z" und "c" hyperkomplexe Zahlen sind, die kartesische x-, y- und z-Koordinaten darstellen.
+        </p>
+
+        <p>
+            Der Potenzierungsterm kann wie folgt definiert werden:
+            <br>
+            <strong>{x,y,z}^n = r^n { sin(theta*n) * cos(phi*n) , sin(theta*n) * sin(phi*n) , cos(theta*n) } </strong>
+            ...wobei:
+            <br>
+            <strong>r = sqrt(x^2 + y^2 + z^2)</strong><br>
+            <strong>theta = atan2( sqrt(x^2+y^2), z )</strong><br>
+            <strong>phi = atan2(y,x)</strong><br><br>
+            Und der Additionsterm in z -> z^n + c ist ähnlich wie die standardmäßige komplexe Addition und wird einfach
+            wie folgt definiert<br>
+            <strong>{x,y,z}+{a,b,c} = {x+a, y+b, z+c}</strong>
+        </p>
+        <img src="../../res/example_mandelbulb.jpg" class="example_mandelbulb">
+    
+        <h2>Mandelbrot</h2>
+    
     </div>
 
     <footer>
