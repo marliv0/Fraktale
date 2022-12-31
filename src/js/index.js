@@ -3,6 +3,9 @@ function a() {
     // document.querySelector(".introduction").scrollIntoView();
 }
 
+function fillSidebar() {
+    
+}
 
 /*
 console.log("pain...");
