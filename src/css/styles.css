@@ -147,14 +147,14 @@ button {
     /* padding: 5px; */
 }
 
+img.article_img_mandelbulb:hover,
+img.article_img_mandelbulb:focus,
+img.article_img_mandelbrot:hover,
+img.article_img_mandelbrot:focus,
 img.article_img_julia:hover,
-img.article_img_julia:focus {
-    height: 500px;
-    width: auto;
-}
-
-img.article_img_sierpinski:hover,
-img.article_img_sierpinski:focus {
+img.article_img_julia:focus,
+img.article_img_newton:hover,
+img.article_img_newton:focus {
     height: 500px;
     width: auto;
 }

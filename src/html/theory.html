@@ -94,7 +94,7 @@
             wie folgt definiert<br>
             <strong>{x,y,z}+{a,b,c} = {x+a, y+b, z+c}</strong>
         </p>
-        <img src="../../res/example_mandelbulb.jpg" class="example_mandelbulb">
+        <img src="../../res/mandelbulb.jpg" class="example_mandelbulb">
 
         <br><br><br>
         <h2 class="topic" id="Mandelbrot">Mandelbrot</h2>
@@ -136,6 +136,60 @@
             diesem c
             berechneten nicht über jede Grenze wachsen, unabhängig davon, wie groß
             wird.
+        </p>
+
+        <br><br><br>
+        <h2 class="topic" id="Julia-Menge">Julia-Menge</h2>
+        <p>
+            Gaston Julia untersuchte rationale Polynomausdrücke verschiedenen Grades (z.B. z4 + z3/(z + 1) + z2/(z3 +
+            4z2 + 5)+
+            c), aber in diesem Vortrag werde ich die Diskussion hauptsächlich auf die Familie der Mengen beschränken,
+            die durch die spezielle quadratische Fallform f(z) = z^2 + c erzeugt werden. z stellt hier eine Variable der
+            Form a+ib (a und b reelle Zahlen) dar, die alle Werte in der komplexen Ebene annehmen kann. Die Größe c ist
+            ebenfalls als komplexe Zahl definiert, wird aber für jede beliebige Julia-Menge konstant gehalten (daher
+            wird sie als Parameter bezeichnet). Mit anderen Worten, es gibt unendlich viele Julia-Mengen, die jeweils
+            für einen bestimmten Wert von c definiert sind, wobei die Julia-Mengen mit kleineren Werten von c (d. h. |c|
+            < ~ 2) grafisch besonders interessant sind. Der einfache Ausdruck f(z)=z2 + c hat bei einmaliger Verwendung
+                wenig Potenzial, etwas Interessantes zu erzeugen - nur durch wiederholte Iteration kann die Julia-Menge
+                definiert werden. Wenn die Ausgabe des Ausdrucks f(z) als neuer Wert von z in den Ausdruck zurückgeführt
+                wird, nennt man dies Iteration, eine Art Rückkopplungsprozess. Somit gilt für jedes n: zn+1=f(z)=zn2 + c
+                und jeder neu berechnete Wert von f(z) wird über die Rückkopplungsschleife zum nachfolgenden Eingabewert
+                von z. Beachten Sie, dass Autoren rein reale Werte von c wie -1+0i in der Regel als "-1" ausdrücken, was
+                Laien verwirren kann, die nicht wissen, dass c immer noch in der komplexen Ebene definiert ist. Für den
+                speziellen Fall, dass c=0+0i ist, ist die Julia-Menge einfach ein (nicht fraktaler) Kreis mit Radius 1.
+                Eine schöne geometrische Erklärung des Ergebnisses der Quadrierung einer komplexen Zahl und der Addition
+                einer komplexen Konstante findet sich auf der Website Chaos Hypertextbook (Elert 22.shtml). Für jedes z
+                besteht diese Transformation aus einer Kontraktion (für |z|<1) oder Dilatation (für |z|>1), die sich aus
+                der Multiplikation mit |z| ergibt, sowie aus einer Verdoppelung des Polarwinkels (d.h. des Arguments)
+                von z und einer anschließenden Translation mit c.
+
+                Für jeden gegebenen Anfangswert von z, z0, gibt es zwei Möglichkeiten, was mit den iterierten Werten von
+                f(z) passiert, wenn n gegen unendlich wächst: Entweder kann f(z) unbegrenzt weiter wachsen oder es
+                bleibt begrenzt. Punkte z0 in der komplexen Ebene, die bei aufeinanderfolgenden Iterationen von f(z)
+                nicht begrenzt bleiben, werden als Punkte in der Fluchtmenge Ec bezeichnet. Alle anderen Punkte in der
+                komplexen Ebene bleiben begrenzt, wenn n gegen unendlich geht - sie werden als Gefangene bezeichnet und
+                befinden sich in der für ein gegebenes c definierten Gefangenenmenge Pc. Alle Punkte müssen entweder in
+                der einen oder in der anderen Menge liegen. Die gemeinsame Grenze zwischen der Fluchtmenge und der
+                Gefangenenmenge wird als Julia-Menge Jc bezeichnet, die für einen bestimmten Wert von c definiert ist.
+                Der Schwellenradius r(c) = max(|c|, 2) ist ein nützliches Testkriterium für die Computerimplementierung.
+                Wenn ein Orbit zk jemals den Schwellenradius r(c) überschreitet, ist es sicher, dass der Orbit ins
+                Unendliche entweicht, und daher liegt der Startpunkt in der Fluchtmenge (Peitgen et al. 1992 S. 794).
+
+                In der Literatur scheint es eine kleine definitorische Verwirrung darüber zu geben, ob die Randpunkte
+                (d. h. die Julia-Menge) selbst Teil der Gefangenenmenge sind, aber das muss der Fall sein. Die komplexe
+                Ebene ist nur in gefangene und entweichende Punkte unterteilt, so dass die Randpunkte zu Pc gehören
+                müssen, da sie nicht zu Ec gehören können (sonst würden sie bei wiederholten Iterationen entweichen, was
+                nicht der Fall ist). Es gibt Julia-Mengen (d. h. von Randpunkten), die keine inneren Gefangenenpunkte
+                einschließen. Da Pc per Definition das ist, was von der komplexen Ebene übrig bleibt, nachdem Ec
+                entfernt wurde, müssen die Rand- und die Gefangenenpunkte übereinstimmen. Ein Beispiel für eine solche
+                Menge ist Jc für c=0+i (Peitgen et al. 1992 S. 798).
+
+                Ich habe dies nicht explizit gesehen, vermute aber, dass es keine Julia-Mengen gibt, die keine
+                Fluchtpunkte haben, die vollständig von Gefangenenpunkten umgeben sind.
+
+                Wie bereits erwähnt, können Julia-Mengen auch aus höhergradigen und komplexeren Ausdrücken gebildet
+                werden. Im Folgenden sind Julia-Mengen für die iterierten Funktionen f(z) = z4 + c und f(z) = z5 + c
+                aufgeführt werden.
         </p>
 
     </div>

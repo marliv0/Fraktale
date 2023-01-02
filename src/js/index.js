@@ -12,7 +12,7 @@ function fillSidebar() {
 
         element.innerText = topic;
         element.onclick = function () {
-                document.getElementById(element.innerText).scrollIntoView();
+            document.getElementById(element.innerText).scrollIntoView();
         };
         document.getElementById("toc").appendChild(element);
     }
