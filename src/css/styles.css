@@ -89,13 +89,14 @@ iframe {
     position: absolute;
     top: 115%;
     left: 25%;
-    width: 100%;
+    width: 50vw;
     display: inline-block;
 }
 
 .intro_paragraph {
     font-size: 24px;
     word-wrap: break-word;
+    z-index: 3;
 }
 
 .main_img {
@@ -103,26 +104,39 @@ iframe {
     width: 15%;
     height: auto;
     float: right;
+    position: absolute;
+    top: 10%;
+    z-index: 1;
 }
 
-.btn_read_further {
+button {
     pointer-events: fill;
     border: none;
     color: white;
     background-color: #FF8A5B;
-    padding: 16px 400px;
+    z-index: 2;
+    position: absolute;
+    top: 100%;
     font-size: 24px;
-    margin-left: 50px;
+    width: 50vw;
+    height: 5vh;
 }
 
-.article {
+@media (max-width: 600px) {
+    button {
+        bottom: 5%;
+        left: 5%;
+    }
+}
+
+.articles {
     font-size: 32px;
-    margin-top: -50%;
+    margin-top: 100%;
     text-align: center;
 }
 
 .row {
-    margin-left: 500px;
+    margin-left: 350px;
     margin-top: 2%;
     margin-left: 255;
     display: flex;
@@ -187,22 +201,20 @@ footer a:hover {
     left: 0;
     background-color: #111;
     overflow-x: hidden;
-    padding-top: 20px;
+    padding-top: 20%;
 }
 
-.sidebar a {
-    padding-top: 30%;
-    padding-bottom: -1%;
-    /* padding: 6px 8px 6px 16px; */
+.sidebar li {
     text-decoration: none;
+    list-style-type: none;
     font-size: 25px;
     color: #818181;
-    display: block;
+
 }
 
 .contents {
     margin-left: 160px;
-    padding-top: 2%;
+    padding-top: 5%;
     padding-left: 1vh;
     word-wrap: break-word;
     font-size: 24px;
