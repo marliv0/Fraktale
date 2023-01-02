@@ -1,11 +1,5 @@
-function a() {
-    console.log("clicked...");
+function scrollToArticles() {
     document.querySelector(".articles").scrollIntoView();
-}
-
-function scrollTo(id) {
-    // document.querySelector(`.${id}`).scrollIntoView();
-    console.log("scroll to: ", id);
 }
 
 function fillSidebar() {
@@ -25,7 +19,7 @@ function fillSidebar() {
 }
 
 /*
-const text = document.getElementById("pls");
+const text = document.getElementById("foo");
 
 const callback = (entries) => {
     entries.forEach(entry => {
