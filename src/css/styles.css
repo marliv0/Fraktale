@@ -131,7 +131,7 @@ button {
 
 .articles {
     font-size: 32px;
-    margin-top: 100%;
+    margin-top: 90%;
     text-align: center;
 }
 
@@ -193,18 +193,20 @@ footer a:hover {
     background-color: #202020;
 }
 
-.sidebar {
+#sidebar {
     height: 100%;
-    width: 160px;
+    width: 180px;
     position: fixed;
     top: 0;
     left: 0;
     background-color: #111;
     overflow-x: hidden;
-    padding-top: 20%;
+    padding-top: 2%;
+    white-space: nowrap;
+    cursor: pointer;
 }
 
-.sidebar li {
+#sidebar li {
     text-decoration: none;
     list-style-type: none;
     font-size: 25px;
@@ -220,7 +222,8 @@ footer a:hover {
     font-size: 24px;
 }
 
-.example_mandelbulb {
+.example_mandelbulb,
+.example_newton {
     display: block;
     margin: 0 auto;
 }

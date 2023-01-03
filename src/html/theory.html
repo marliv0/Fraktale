@@ -26,7 +26,7 @@
         </nav>
     </div>
 
-    <div class="sidebar">
+    <div id="sidebar">
         <ul id="toc">
             <!-- li -->
         </ul>
@@ -62,7 +62,7 @@
             Sierpiński und Gaston Maurice Julia zu den namensgebenden Mathematikern.
         </p>
 
-        <h1 class="topic" id="Beispiele">Beispiele</h1>
+        <h2 class="topic" id="Beispiele">Beispiele</h2>
 
         <h2 class="topic" id="Mandelbulb">Mandelbulb</h2>
         <p>
@@ -192,8 +192,207 @@
                 aufgeführt werden.
         </p>
 
-    </div>
+        <br><br><br>
+        <h2 class="topic" id="Newtonfraktal">Newtonfraktal</h2>
+        <p>
+            <h3 class="topic">Einführung</h3>
+            Diese Seite beschreibt eine Art von Fraktal, das von der Newton-Raphson-Methode abgeleitet ist, die
+            normalerweise als
+            eine Näherungsmethode zur Lösung von Gleichungen.
 
+            Diese Idee ist nicht neu für mich. Ich stelle eine weitere Seite ein, weil sie einige Ergänzungen zu diesem
+            Konzept enthält, die ich
+            die ich nirgendwo anders gesehen habe.
+        </p>
+        <p>
+            <h3 class="topic">Berechnung</h3>
+            Die Newton-Raphson-Iteration sollte jedem bekannt sein, der sich mit der Infinitesimalrechnung beschäftigt
+            hat; es handelt sich um eine Methode zum Finden von
+            Wurzeln einer Funktion, indem man die Ableitung der Funktion verwendet, um eine Annäherung an die Wurzel zu
+            verbessern.
+
+            Um eine Newton-Raphson-Approximation durchzuführen, nehmen wir an, Sie haben eine Funktion f(x) mit der
+            Ableitung f′(x) und Sie
+            haben eine Annäherung a an eine Wurzel der Funktion. Das Newton-Raphson-Verfahren besteht darin, Folgendes
+            zu berechnen
+            a′=a-f(a)/f′(a), was eine nähere Annäherung an die Wurzel darstellt. Normalerweise würde man dies dann
+            wiederholen,
+            bis die aufeinanderfolgenden Werte extrem nahe beieinander liegen, woraus man schließen würde, dass
+            man eine sehr gute Annäherung an den tatsächlichen Wert r hat, für den f(r)=0 ist.
+
+            Die Newton-Raphson-Methode ist in der Praxis nützlich, weil sie extrem schnell konvergiert. Der Abstand von
+            der Wurzel zu jeder Annäherung wird bei jeder Iteration grob quadriert; wenn also der Abstand bereits so
+            klein ist
+            Wenn der Abstand bereits so klein ist, dass er dadurch eher kleiner als größer wird, kann man davon
+            ausgehen, dass sich die Anzahl der richtigen
+            Dezimalstellen in jeder Näherung zu verdoppeln. Wenn Sie also zu Beginn eine einigermaßen gute Annäherung
+            finden können,
+            kann man mit Newton-Raphson sehr schnell eine ausgezeichnete Näherung erhalten.
+        </p>
+        <p>
+            <h3 class="topic">Herleitung</h3>
+            Die Newton-Raphson-Formel besteht im Wesentlichen darin, eine Tangente an die Kurve im Punkt der
+            der ursprünglichen Annäherung, und dann folgt man dieser Tangente bis zu dem Punkt, an dem sie die x-Achse
+            schneidet. Da jede differenzierbare
+            Funktion bei ausreichender Vergrößerung fast wie eine Gerade aussieht, erklärt dies, warum es so gut
+            funktioniert
+            so gut funktioniert: Die Kurve selbst weicht nicht sehr stark von der Tangente ab, und die Punkte, an denen
+            sie die x-Achse
+            die x-Achse kreuzen, liegen sehr nahe beieinander. Diese Technik verbessert also eine bereits gute
+            Annäherung massiv
+            Annäherung.
+
+            Wenn man jedoch von einer wirklich schlechten Näherung ausgeht, passieren noch viel interessantere Dinge.
+            Angenommen, die
+            Funktion krümmt sich von einem Schnittpunkt mit der x-Achse nach oben und wieder nach unten, wie eine
+            Parabel; und
+            Nehmen wir an, Ihre anfängliche Näherung liegt irgendwo in der Nähe des oberen Endes dieses Bogens. Zeichnen
+            Sie nun eine Tangente an die Kurve
+            und folgen Sie ihr zur x-Achse, so sind Sie weit von den Wurzeln der Funktion entfernt - und da
+            Ihre erste Approximation a den Maximalpunkt der Kurve schneidet, wird die zweite
+            Newton-Raphson-Approximation
+            a′ von einer Seite der Wurzeln auf die andere wechseln. Wenn a die relativ kurze Strecke
+            über das Maximum der Kurve bewegt, wird a′ den größten Teil der realen Linie abdecken.
+        </p>
+        <p>
+            <h3 class="topic">Verhalten</h3>
+
+            Diese Art von Verhalten, die Ausdehnung eines kleinen Bereichs in einen großen, ist genau die Art von
+            Verhalten, die wir erwarten
+            die zu selbstähnlichen Fraktalen führen. Wenn wir also an jedem Punkt der realen Linie eine
+            Newton-Raphson-Iteration starten würden
+            der reellen Linie starten, jede Iteration so lange laufen lassen, bis sie innerhalb eines bestimmten
+            Toleranzbereichs zu einer Wurzel konvergiert, und dann
+            den Startpunkt einfärben, je nachdem, bei welcher Wurzel sie gelandet ist, könnten wir fraktale
+            Formen.
+
+            Fraktale auf einer Linie sind jedoch nicht sehr interessant; arbeiten wir also in der komplexen Ebene. Die
+            Newton-Raphson-Iteration funktioniert dort immer noch sehr gut, also werde ich dort meine Fraktale erzeugen.
+        </p>
+        <img src="../../res/newton.jpg" class="example_newton">
+        <p>
+            <h3 class="topic">Bilderklärung</h3>
+            In diesem Bild sehen wir einen großen langweiligen Bereich, der jede Wurzel der Funktion umgibt - wie zu
+            erwarten war, da
+            jeder Punkt in der Nähe einer Wurzel schnell zu dieser Wurzel konvergiert und nichts Interessantes tut. Aber
+            zwischen den Bereichen
+            der langweiligen, gutmütigen Konvergenz sehen wir einige schöne fraktale Formen. Zoomen wir auf einen dieser
+            Grenzbereiche:
+
+            Wie wir vorausgesagt haben, besteht jeder der herzförmigen Kleckse, aus denen die Grenzlinie besteht, selbst
+            aus
+            Grenzlinien, die aus weiteren herzförmigen Klecksen bestehen. Dieses Muster ist ein echtes Fraktal.
+
+            Hier ist ein etwas anderes Beispiel. Diesmal ist die verwendete Funktion (z-3)(z-2)(z-1)z(z+1)(z+2)(z+3),
+            also
+            hat sie sieben Wurzeln, die in einer langen Linie aufgereiht sind:
+
+            In diesem Fall sind die fraktalen Formen im Vergleich zur Gesamtstruktur des Bildes viel kleiner. Aber
+            sie sind nicht völlig abwesend. Wenn wir ein paar der kleinen Kleckse an den Grenzlinien heranzoomen, sehen
+            wir
+            dies:
+
+            Dekoration
+            Diese Bilder sind recht hübsch, aber sie sind etwas zu grell, um sie in ihrer jetzigen Form als
+            Desktop-Hintergrund zu verwenden.
+            Form zu machen. Können wir etwas tun, um sie weniger grell zu machen?
+        </p>
+        <p>
+            <h3 class="topic">Iterationen</h3>
+            Ja, das gibt es. Eine offensichtliche Sache, die wir tun können, ist neben der Feststellung, bei welcher
+            Wurzel der Funktion die Iteration
+            bei welcher Wurzel der Funktion gelandet ist, kann man auch zählen, wie viele Iterationen nötig waren, um
+            dorthin zu gelangen. Dann können wir jedem Pixel eine andere Farbe
+            Schattierung der Farbe einfärben, die dieser Wurzel zugewiesen ist, je nach Anzahl der Iterationen. Wenn man
+            also den offensichtlichen
+            Ansatz, den Pixelton auf die Anzahl der Iterationen modulo der Anzahl der verfügbaren Farbtöne zu setzen (so
+            dass
+            so dass jede Farbe diese Schattierungen durchläuft), ergibt sich etwa folgendes Bild:
+
+            Das ist nicht nur hübscher, sondern es zeigt uns auch genau, wo jede Wurzel der Funktion liegt - anstatt nur
+            zu wissen, dass die Wurzeln irgendwo in den großen farbigen Bereichen liegen, können wir nun jede Wurzel
+            eindeutig als den
+            Zentrum des hellen Flecks in jedem Bereich identifizieren.
+
+            Das zyklische Verhalten ist allerdings nicht ganz optimal; es funktioniert gut genug, wenn die Anzahl der
+            verfügbaren Farben
+            begrenzt ist, aber es bedeutet, dass es plötzliche Kanten gibt (wie die in der Mitte jeder Region), an denen
+            eine
+            dunkle Farbe plötzlich wieder zu einer hellen Farbe wird. Wenn wir echte Farben zur Verfügung haben, wäre es
+            vielleicht besser
+            besser, wenn die Pixelschattierung monoton wäre - immer dunkler, je mehr Iterationen erforderlich sind, aber
+            immer dunkler werden, je mehr Iterationen erforderlich sind, aber immer weniger ausblenden und nie wirklich
+            schwarz werden.
+        </p>
+
+        <p>
+            <h3>Verschiedene Durchgänge</h3>
+            Das sieht schon viel besser aus, finde ich. Aber es wäre noch besser, wenn die sichtbaren Grenzen
+            zwischen verschiedenen Schattierungen der gleichen Farbe entfernt werden könnten. Ich habe den Verdacht,
+            dass eine strenge Umsetzung dieses Vorhabens
+            wirklich schreckliche Mathematik und eine Menge Sonderfälle erfordert, aber ich habe herausgefunden, dass
+            man eine gute Ad-hoc-Näherung erhält
+            eine gute Ad-hoc-Annäherung erhält, indem man einfach die letzte Iteration betrachtet, bei der der Punkt zum
+            ersten Mal in den angegebenen
+            Abstand zu einer Wurzel kommt. Wir betrachten den Abstand D0 zwischen dem vorherigen Punkt und der Wurzel
+            und den Abstand D1 zwischen
+            dem neuen Punkt zur Wurzel, und wir wissen, dass der Schwellenwertabstand T irgendwo zwischen den beiden
+            liegt.
+        </p>
+        <p>
+            Ich habe herausgefunden, dass ein einfacher Blick auf
+            oder, mit anderen Worten, ob der logarithmische Wert des Schwellenradius in der Nähe des Beginns oder des
+            Endes der vom Punkt zurückgelegten inneren
+            der vom Punkt zurückgelegten Strecke (auf einer logarithmischen Skala) liegt, ein durchaus akzeptables
+            Ergebnis liefert, das
+            zur Glättung dieser Grenzen verwenden können:
+        </p>
+        <p>
+            Es stellt sich heraus, dass dies möglich ist. Beachten Sie, dass eine Funktion, die aus dem Produkt vieler
+            kleinerer Faktoren besteht
+            Faktoren
+            f=abcd, dann ergibt die Produktregel ihre Ableitung als Summe einer Liste von Termen
+            f′=a′bcd+ab′cd+abc′d+abcd′
+            wobei jeder Term f selbst sehr ähnlich sieht. In der Tat können wir beide Seiten durch f dividieren und
+            erhalten
+            f′f=a′a+b′b+c′c+d′d
+            was genau das ist, dessen Kehrwert wir in der N-R-Formel von z subtrahieren. Wenn nun jeder
+            Faktor a
+            von der Form (z-k) ist, dann sieht der resultierende Term a′/a wie 1/(z-k) aus; und wie wir in der
+            vorherigen
+            Wenn der Faktor auf eine Potenz erhöht wird, so dass er die Form (z-k)e hat, dann ist der resultierende Term
+            a′/a
+            ist
+            nur um eine Konstante verändert, so dass er zu e/(z-k) wird.
+            <br><br>
+
+            Wenn wir also eine Funktion haben, die das Produkt einer Reihe von Termen der Form (z-a1)b1 ist, dann können
+            wir
+            die Newton-Raphson-Iteration effizient durchführen, ohne die gesamte Funktion selbst zu berechnen. Wir
+            berechnen einfach b1/(z-a1) für jeden Term, summieren sie, bilden den Kehrwert und subtrahieren diesen von
+            z.
+            <br><br>
+
+            Das Nützliche an diesem Verfahren ist, dass wir so jeden Faktor unseres "Polynoms" (das die Funktion selbst
+            darstellt) bequem erhöhen können.
+            "Polynoms" (das eigentlich gar kein Polynom mehr ist) nicht nur auf eine beliebige reelle Potenz, sondern
+            auch auf
+            a
+            komplexe Potenz erhöhen, wenn wir das wollen. Und es stellt sich heraus, dass wir das auch wollen, denn
+            einige sehr beeindruckende Fraktale
+            werden
+            auftauchen, wenn wir das tun. Hier ist eine Karte mit 121 kleinen fraktalen Bildern, die alle aus Funktionen
+            mit denselben drei Wurzeln, nämlich den komplexen Wurzeln von 1, erzeugt wurden.
+           <br><br>
+            Aber die rote Wurzel (1 selbst) wurde auf eine andere Potenz angehoben
+            in
+            in jedem Bild auf eine andere Potenz angehoben: quer durch die Karte verläuft der Realteil der Potenz von 0
+            bis 1, und nach unten hin der Imaginärteil
+            Teil
+            von 0 bis 1.
+        </p>
+
+    </div>
     <footer>
         <div>
             <a href="https://github.com/marliv0/Fraktale/tree/main#copyright">Copyright</a>

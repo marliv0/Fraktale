@@ -6,15 +6,31 @@ function fillSidebar() {
     const topics = document.getElementsByClassName("topic");
     let topic;
 
-    for (let i = 0; i < topics.length; i++) {
+    for (let i = 1; i < topics.length + 1; i++) {
         const element = document.createElement("li");
         topic = topics[i].innerText;
 
-        element.innerText = topic;
+
+        element.innerText = `${i}. ${topic}`;
         element.onclick = function () {
             document.getElementById(element.innerText).scrollIntoView();
         };
-        document.getElementById("toc").appendChild(element);
+
+        switch (topics[i].nodeName) {
+            /*
+            case "H1":
+                element.style = "font-size: 24px;";
+                break;
+            case "H2":
+                element.style = "font-size: 22px;";
+                break;
+                */
+            case "H3":
+                element.style = "padding-left: 25px;font-size: 18px;";
+                element.innerText = `${topic}`;
+                break;
+        }
+        document.getElementById("sidebar").appendChild(element);
     }
 }
 
