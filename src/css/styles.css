@@ -223,6 +223,7 @@ footer a:hover {
 }
 
 .example_mandelbulb,
+.example_mandelbrot,
 .example_newton {
     display: block;
     margin: 0 auto;
