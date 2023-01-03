@@ -18,9 +18,9 @@ function createImgElements(urls) {
     image.style = "";
 }
 
-const KEYWORD = "fractal";
+const KEYWORD = "abstract";
 const AMOUNT = Math.floor(Math.random() * 80) + 15
-const PAGE = Math.floor(Math.random() * 4) + 1
+const PAGE = Math.floor(Math.random() * 4) + 2
 
 fetch(`https://api.pexels.com/v1/search?query=${KEYWORD}&per_page=${AMOUNT}&page=${PAGE}`, {
         headers: {

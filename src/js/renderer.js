@@ -28,7 +28,7 @@ function getVertexShaderSrc() {
  */
 function getFragmentShaderSrc() {
     const real = String.raw `
-precision mediump float;
+precision highp float;
 uniform float zoom;
 vec2 offset = vec2(0.0, 0.0);
 
@@ -53,8 +53,8 @@ return n / float(itr);
 
 vec4 map_to_color(float t) {
  float r = 9.0 * (1.0 - t) * t * t * t;
- float g = 15.0 * (1.0 - t) * (1.0 - t) * t * t;
- float b = 8.5 * (1.0 - t) * (1.0 - t) * (1.0 - t) * t;
+ float g = 30.0 * (3.0 - t) * (1.0 - t) * t * t;
+ float b = 20.5 * (1.0 - t) * (1.0 - t) * (1.0 - t) * t;
  return vec4(r, g, b, 1.0);
 }
 
@@ -141,7 +141,6 @@ function changeZoom(gl, program) {
 }
 
 function main() {
-    console.log("JS loaded.");
     const canvas = document.querySelector(".glcanvas");
     gl = canvas.getContext("webgl");
 

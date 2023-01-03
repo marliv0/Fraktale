@@ -3,17 +3,18 @@ function scrollToArticles() {
 }
 
 function fillSidebar() {
+    // let topic;
+    
     const topics = document.getElementsByClassName("topic");
-    let topic;
-
+    console.log(topics);
     for (let i = 1; i < topics.length + 1; i++) {
         const element = document.createElement("li");
-        topic = topics[i].innerText;
+        let topic = topics[i].innerText;
 
 
         element.innerText = `${i}. ${topic}`;
         element.onclick = function () {
-            document.getElementById(element.innerText).scrollIntoView();
+            document.getElementById(topic).scrollIntoView();
         };
 
         switch (topics[i].nodeName) {
