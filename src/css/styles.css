@@ -132,6 +132,7 @@ button {
 .articles {
     font-size: 32px;
     margin-top: 90%;
+    margin-right: 10%;
     text-align: center;
 }
 
@@ -195,7 +196,7 @@ footer a:hover {
 
 #sidebar {
     height: 100%;
-    width: 180px;
+    width: 185px;
     position: fixed;
     top: 0;
     left: 0;
