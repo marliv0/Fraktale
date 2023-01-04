@@ -161,13 +161,10 @@ img.article_img_newton:focus {
 }
 
 .glcanvas {
-    padding-left: 0;
     padding-right: 0;
-    margin-left: auto;
     margin-right: auto;
-    margin-top: 4%;
+    margin-top: 0%;
     display: block;
-    width: 80%;
 }
 
 footer {
@@ -216,7 +213,7 @@ footer a:hover {
 }
 
 .contents {
-    margin-left: 160px;
+    margin-left: 170px;
     padding-top: 5%;
     padding-left: 1vh;
     word-wrap: break-word;
@@ -225,7 +222,14 @@ footer a:hover {
 
 .example_mandelbulb,
 .example_mandelbrot,
-.example_newton {
+.example_newton,
+.example_julia {
     display: block;
     margin: 0 auto;
+}
+
+.explore_title {
+    font-size: 42px;
+    padding-top: 2%;
+    padding-left: 10%;
 }

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fraktale</title>
+  <title>Mandelbrot Implementierung</title>
   <link rel="stylesheet" href="../css/styles.css">
   <script src="../js/renderer.js" type="module" defer></script>
 </head>
@@ -23,9 +23,11 @@
     </nav>
   </div>
 
+  <h1 class="explore_title">Mandelbrot in WebGL</h1>
+
   <canvas class="glcanvas" width="1920" height="1080"></canvas>
   <input class="zoom_input" type="number" id="zoom" min="10" max="100" onchange="changeZoom(gl, program)">
-  
+
   <footer>
     <div>
       <a href="https://github.com/marliv0/Fraktale/tree/main#copyright">Copyright</a>
