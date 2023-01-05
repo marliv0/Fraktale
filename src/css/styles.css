@@ -158,6 +158,8 @@ img.article_img_newton:hover,
 img.article_img_newton:focus {
     height: 500px;
     width: auto;
+    webkit-filter: blur(4px);
+    filter: blur(4px);
 }
 
 .glcanvas {
@@ -201,7 +203,6 @@ footer a:hover {
     overflow-x: hidden;
     padding-top: 3%;
     white-space: nowrap;
-    cursor: pointer;
 }
 
 #sidebar li {
@@ -209,7 +210,7 @@ footer a:hover {
     list-style-type: none;
     font-size: 25px;
     color: #818181;
-
+    cursor: pointer;
 }
 
 .contents {
