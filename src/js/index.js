@@ -13,11 +13,11 @@ function fillSidebar() {
         element.style="margin: 10px 0;";
         
         element.onmouseover = function() {
-            element.style.cssText += "color: white;";
+            element.style.cssText += "color: white;background-color:#282828";
         }
 
         element.onmouseleave = function() {
-            element.style.cssText += "color: #818181";
+            element.style.cssText += "color: #818181;background-color:#111111;";
         }
 
         element.onclick = function () {

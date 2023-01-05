@@ -131,7 +131,7 @@ button {
 
 .articles {
     font-size: 32px;
-    margin-top: 90%;
+    margin-top: 95%;
     margin-right: 10%;
     text-align: center;
 }
@@ -199,7 +199,7 @@ footer a:hover {
     left: 0;
     background-color: #111;
     overflow-x: hidden;
-    padding-top: 2%;
+    padding-top: 3%;
     white-space: nowrap;
     cursor: pointer;
 }
@@ -216,7 +216,7 @@ footer a:hover {
     margin-left: 170px;
     padding-top: 5%;
     padding-left: 1vh;
-    word-wrap: break-word;
+    word-wrap: break-all;
     font-size: 24px;
 }
 
