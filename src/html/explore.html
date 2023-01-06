@@ -33,6 +33,11 @@
       <option value="2500">2500x</option>
       <option value="4000">4000x</option>
     </select>
+
+    <h3 class="transform">Verschiebung auf der X-Achse</h3>
+    <div class="slide_container">
+      <input type="range" min="1" max="100" value="1" class="x_slider" oninput="transform()">
+    </div>
   </div>
 
   <canvas class="glcanvas" width="1280" height="720"></canvas>

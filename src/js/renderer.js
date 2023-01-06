@@ -30,10 +30,10 @@ function getFragmentShaderSrc() {
     const real = String.raw `
 precision highp float;
 uniform float zoom;
-vec2 offset = vec2(0.0, 0.0);
+uniform vec2 offset;
 
-float n = 0.0;
 float threshold = 100.0;
+float n = 0.0;
 
 float mandelbrot(vec2 c) {
  const int itr = 400;
@@ -136,8 +136,17 @@ function createBuffer(gl, data) {
 function changeZoom(value) {
     zoomFactor = parseFloat(value);
     const location = gl.getUniformLocation(program, "zoom");
-    
+
     gl.uniform1f(location, zoomFactor);
+    gl.drawArrays(gl.TRIANGLES, 0, 6);
+}
+
+function transform() {
+    const x = parseInt(document.querySelector(".x_slider").value);
+    console.log(x);
+
+    const location = gl.getUniformLocation(program, "offset");
+    gl.uniform2fv(location, [x, 0]);
     gl.drawArrays(gl.TRIANGLES, 0, 6);
 }
 
