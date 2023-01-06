@@ -234,3 +234,16 @@ footer a:hover {
     padding-top: 2%;
     padding-left: 10%;
 }
+
+.ui {
+    display: flex;
+    align-items: center;
+}
+
+.zoom {
+    margin-right: 8px;
+}
+
+select {
+    float: left;
+}

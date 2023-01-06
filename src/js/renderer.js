@@ -5,7 +5,7 @@
  * 2023 Marko Livajusic (marko_livajusic0 <at> protonmail.com) 
  */
 
-main();
+// main();
 
 /**
  * Vertex-Shader für die Darstellung.
@@ -48,7 +48,7 @@ float mandelbrot(vec2 c) {
   n++;
 }
 
-return n / float(itr);
+  return n / float(itr);
 }
 
 vec4 map_to_color(float t) {
@@ -61,7 +61,7 @@ vec4 map_to_color(float t) {
 void main(){
  vec2 coord = vec2(gl_FragCoord.xy);
 
- vec2 screenSize = vec2(1920, 1080);
+ vec2 screenSize = vec2(1280, 720);
  float t = mandelbrot(((coord - screenSize/2.0)/zoom)-offset);
 
  if(gl_FragCoord.x < 40.0){
@@ -133,42 +133,57 @@ function createBuffer(gl, data) {
     return vbo;
 }
 
-function changeZoom(gl, program) {
-    const value = document.querySelector(".zoom_input").value;
-    console.log(value);
-    // const location = gl.getUniformLocation(program, "zoom");
-    // gl.uniform1f(location, value);
-}
+function changeZoom(value) {
 
-function main() {
-    const canvas = document.querySelector(".glcanvas");
-    gl = canvas.getContext("webgl");
+    zoomFactor = parseFloat(value);
+    console.log(zoomFactor);
 
-    if (gl === null) console.log("WebGL wird vom Browser nicht unterstützt.");
-
-    var vertexShaderSrc = getVertexShaderSrc();
-    var vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexShaderSrc);
-
-    var fragmentShaderSrc = getFragmentShaderSrc();
-    var fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSrc);
-
-    var program = createProgram(gl, vertexShader, fragmentShader);
-
-    gl.clearColor(0.0, 0.0, 0.0, 1.0);
-    gl.clear(gl.COLOR_BUFFER_BIT);
-
-    const vbo = createBuffer(gl, new Float32Array([
-        -1.0, -1.0, 0.0,
-        1.0, -1.0, 0.0,
-        1.0, 1.0, 0.0,
-        1.0, 1.0, 0.0,
-        -1.0, 1.0, 0.0,
-        -1.0, -1.0, 0.0
-    ]));
-    const coord = gl.getAttribLocation(program, "aVertexPosition");
-    gl.vertexAttribPointer(coord, 3, gl.FLOAT, false, 0, 0);
-    gl.enableVertexAttribArray(coord);
-    gl.uniform1f(gl.getUniformLocation(program, "zoom"), 250.0);
-
+    const location = gl.getUniformLocation(program, "zoom");
+    gl.uniform1f(location, zoomFactor);
     gl.drawArrays(gl.TRIANGLES, 0, 6);
 }
+
+function updateNumIterations() {
+    var iterations = parseInt(document.querySelector(".iterations").value);
+    if (iterations <= 0) {
+        iterations = 500;
+    }
+
+    const location = gl.getUniformLocation(program, "iterations");
+    gl.uniform1i(location, iterations);
+    gl.drawArrays(gl.TRIANGLES, 0, 6);
+}
+
+// function main() {
+const canvas = document.querySelector(".glcanvas");
+gl = canvas.getContext("webgl");
+
+if (gl === null) console.log("WebGL wird vom Browser nicht unterstützt.");
+
+var vertexShaderSrc = getVertexShaderSrc();
+var vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexShaderSrc);
+
+var fragmentShaderSrc = getFragmentShaderSrc();
+var fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSrc);
+
+var program = createProgram(gl, vertexShader, fragmentShader);
+
+gl.clearColor(0.0, 0.0, 0.0, 1.0);
+gl.clear(gl.COLOR_BUFFER_BIT);
+
+const vbo = createBuffer(gl, new Float32Array([
+    -1.0, -1.0, 0.0,
+    1.0, -1.0, 0.0,
+    1.0, 1.0, 0.0,
+    1.0, 1.0, 0.0,
+    -1.0, 1.0, 0.0,
+    -1.0, -1.0, 0.0
+]));
+const coord = gl.getAttribLocation(program, "aVertexPosition");
+gl.vertexAttribPointer(coord, 3, gl.FLOAT, false, 0, 0);
+gl.enableVertexAttribArray(coord);
+
+gl.uniform1f(gl.getUniformLocation(program, "zoom"), 250.0);
+// gl.uniform1f(gl.getUniformLocation(program, "zoom"), parseInt(document.querySelector(".zoom").value));
+gl.drawArrays(gl.TRIANGLES, 0, 6);
+// }

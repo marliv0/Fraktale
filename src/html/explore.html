@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mandelbrot Implementierung</title>
   <link rel="stylesheet" href="../css/styles.css">
-  <script src="../js/renderer.js" type="module" defer></script>
+  <script src="../js/renderer.js" defer></script>
 </head>
 
 <body>
@@ -25,9 +25,17 @@
 
   <h1 class="explore_title">Mandelbrot in WebGL</h1>
 
-  <canvas class="glcanvas" width="1920" height="1080"></canvas>
-  <input class="zoom_input" type="number" id="zoom" min="10" max="100" onchange="changeZoom(gl, program)">
+  <div class="ui">
+    <h3 class="zoom">Zoomfaktor</h3>
+    <select onchange="changeZoom(this.options[this.selectedIndex].value)">
+      <option value="250">250x</option>
+      <option value="1000">1000x</option>
+      <option value="2500">2500x</option>
+      <option value="4000">4000x</option>
+    </select>
+  </div>
 
+  <canvas class="glcanvas" width="1280" height="720"></canvas>
   <footer>
     <div>
       <a href="https://github.com/marliv0/Fraktale/tree/main#copyright">Copyright</a>
