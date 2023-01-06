@@ -134,23 +134,10 @@ function createBuffer(gl, data) {
 }
 
 function changeZoom(value) {
-
     zoomFactor = parseFloat(value);
-    console.log(zoomFactor);
-
     const location = gl.getUniformLocation(program, "zoom");
+    
     gl.uniform1f(location, zoomFactor);
-    gl.drawArrays(gl.TRIANGLES, 0, 6);
-}
-
-function updateNumIterations() {
-    var iterations = parseInt(document.querySelector(".iterations").value);
-    if (iterations <= 0) {
-        iterations = 500;
-    }
-
-    const location = gl.getUniformLocation(program, "iterations");
-    gl.uniform1i(location, iterations);
     gl.drawArrays(gl.TRIANGLES, 0, 6);
 }
 
