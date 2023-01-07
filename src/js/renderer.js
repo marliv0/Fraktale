@@ -61,7 +61,7 @@ vec4 map_to_color(float t) {
 void main(){
  vec2 coord = vec2(gl_FragCoord.xy);
 
- vec2 screenSize = vec2(1280, 720);
+ vec2 screenSize = vec2(1920, 1080);
  float t = mandelbrot(((coord - screenSize/2.0)/zoom)+offset);
 
  if(gl_FragCoord.x < 40.0){
