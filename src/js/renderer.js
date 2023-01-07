@@ -62,7 +62,7 @@ void main(){
  vec2 coord = vec2(gl_FragCoord.xy);
 
  vec2 screenSize = vec2(1280, 720);
- float t = mandelbrot(((coord - screenSize/2.0)/zoom)-offset);
+ float t = mandelbrot(((coord - screenSize/2.0)/zoom)+offset);
 
  if(gl_FragCoord.x < 40.0){
   gl_FragColor = vec4(1.0);
@@ -141,13 +141,25 @@ function changeZoom(value) {
     gl.drawArrays(gl.TRIANGLES, 0, 6);
 }
 
-function transform() {
-    const x = parseInt(document.querySelector(".x_slider").value);
-    console.log(x);
-
+// FIXME: currently, I am always setting the other slider value to 0. However, it resets the transformation...
+function setOffset(x, y) {
     const location = gl.getUniformLocation(program, "offset");
-    gl.uniform2fv(location, [x, 0]);
+    gl.uniform2fv(location, [x, y]);
     gl.drawArrays(gl.TRIANGLES, 0, 6);
+}
+
+function transformX() {
+    const x = parseInt(document.querySelector(".x_slider").value);
+    
+    const offset = gl.getUniform(program, gl.getUniformLocation(program, "offset"));
+    setOffset(x, offset[1]);
+}
+
+function transformY() {
+    const y = parseInt(document.querySelector(".y_slider").value);
+
+    const offset = gl.getUniform(program, gl.getUniformLocation(program, "offset"));
+    setOffset(offset[0], y);
 }
 
 // function main() {
@@ -180,6 +192,4 @@ gl.vertexAttribPointer(coord, 3, gl.FLOAT, false, 0, 0);
 gl.enableVertexAttribArray(coord);
 
 gl.uniform1f(gl.getUniformLocation(program, "zoom"), 250.0);
-// gl.uniform1f(gl.getUniformLocation(program, "zoom"), parseInt(document.querySelector(".zoom").value));
 gl.drawArrays(gl.TRIANGLES, 0, 6);
-// }
