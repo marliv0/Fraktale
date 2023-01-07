@@ -134,7 +134,7 @@ function createBuffer(gl, data) {
 }
 
 function changeZoom(value) {
-    zoomFactor = parseFloat(value);
+    zoomFactor = parseInt(value);
     const location = gl.getUniformLocation(program, "zoom");
 
     gl.uniform1f(location, zoomFactor);
