@@ -141,7 +141,6 @@ function changeZoom(value) {
     gl.drawArrays(gl.TRIANGLES, 0, 6);
 }
 
-// FIXME: currently, I am always setting the other slider value to 0. However, it resets the transformation...
 function setOffset(x, y) {
     const location = gl.getUniformLocation(program, "offset");
     gl.uniform2fv(location, [x, y]);
