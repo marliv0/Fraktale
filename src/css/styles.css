@@ -82,7 +82,6 @@ iframe {
     max-width: 100%;
     width: 100%;
     height: 100%;
-    /* pointer-events: none; */
 }
 
 .introduction {
@@ -93,10 +92,15 @@ iframe {
     display: inline-block;
 }
 
+.intro_title {
+    text-align: center;
+}
+
 .intro_paragraph {
     font-size: 24px;
     word-wrap: break-word;
     z-index: 3;
+    text-align: center;
 }
 
 .main_img {
@@ -179,9 +183,11 @@ footer {
     width: 100%;
     background-color: #EFC69B;
     text-align: center;
-    height: 1.5%;
+    min-height: 1.5%;
     text-transform: uppercase;
     font-weight: bold;
+    margin-top: auto;
+    overflow: hidden;
 }
 
 footer a {

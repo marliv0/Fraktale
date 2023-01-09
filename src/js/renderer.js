@@ -5,8 +5,6 @@
  * 2023 Marko Livajusic (marko_livajusic0 <at> protonmail.com) 
  */
 
-// main();
-
 /**
  * Vertex-Shader für die Darstellung.
  * @returns Vertex-Shader in Form eines Strings. Zuständig für die Positionisierung der Eckpunkte.
