@@ -90,6 +90,7 @@ iframe {
     left: 25%;
     width: 50vw;
     display: inline-block;
+    background-image: linear-gradient(45deg, #DF9B6D, #DAAF44);/* #F2E3BC);*/
 }
 
 .intro_title {
@@ -136,20 +137,19 @@ button {
 .articles {
     font-size: 32px;
     margin-top: 95%;
-    margin-right: 10%;
     text-align: center;
+    background-image: linear-gradient(55deg, #1E1E24,#323031);
 }
 
 .row {
     margin-left: 350px;
     margin-top: 2%;
-    margin-left: 255;
+    margin-left: 5%;
     display: flex;
 }
 
 .column {
     flex: 33.33%;
-    /* padding: 5px; */
 }
 
 img.article_img_mandelbulb:hover,
@@ -164,6 +164,56 @@ img.article_img_newton:focus {
     width: auto;
     webkit-filter: blur(4px);
     filter: blur(4px);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .glcanvas {
@@ -209,6 +259,7 @@ footer a:hover {
     left: 0;
     background-color: #111;
     overflow-x: hidden;
+    overflow-y: auto;
     padding-top: 3%;
     white-space: nowrap;
 }
