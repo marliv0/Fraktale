@@ -1,8 +1,8 @@
 /**
  * Ein Renderer, welches die Mandelbrot-Menge berechnet
  * und diese mithilfe von WebGL und Shadern visuell darstellt.
- * 
- * 2023 Marko Livajusic (marko_livajusic0 <at> protonmail.com) 
+ *
+ * 2023 Marko Livajusic (marko_livajusic0 <at> protonmail.com)
  */
 
 /**
@@ -20,7 +20,7 @@ function getVertexShaderSrc() {
 }
 
 /**
- * Fragment-Shader für die Darstellung. Zuständig für die Berechnung der Mandelbrot-Menge 
+ * Fragment-Shader für die Darstellung. Zuständig für die Berechnung der Mandelbrot-Menge
  * und für die Färbung.
  * @returns Fragment-Shader in Form eines Strings.
  */
@@ -76,7 +76,7 @@ var program;
 
 /**
  * Stellt den Schattierer (Shader), ein "Programm", welches auf der Grafikkarte läuft, her.
- * 
+ *
  * @param {*} gl WebGL-Kontext
  * @param {*} type Typ des Schattierers. Entweder Vertex oder Fragment-Shader.
  * @param {*} source Der Source-Code des Schattierers in der Stringform.
@@ -145,21 +145,31 @@ function setOffset(x, y) {
     gl.drawArrays(gl.TRIANGLES, 0, 6);
 }
 
+function setSlidersValue(x, y) {
+    document.getElementById("x_slider").value = x;
+    document.getElementById("y_slider").value = y;
+}
+
+function goToPoint(x, y){
+    setSlidersValue(x, y);
+    transformX();
+    transformY();
+}
+
 function transformX() {
-    const x = parseInt(document.querySelector(".x_slider").value);
-    
+    const x = parseFloat(document.querySelector("#x_slider").value);
+
     const offset = gl.getUniform(program, gl.getUniformLocation(program, "offset"));
     setOffset(x, offset[1]);
 }
 
 function transformY() {
-    const y = parseInt(document.querySelector(".y_slider").value);
+    const y = parseFloat(document.querySelector("#y_slider").value);
 
     const offset = gl.getUniform(program, gl.getUniformLocation(program, "offset"));
     setOffset(offset[0], y);
 }
 
-// function main() {
 const canvas = document.querySelector(".glcanvas");
 gl = canvas.getContext("webgl");
 

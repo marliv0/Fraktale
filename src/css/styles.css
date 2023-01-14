@@ -126,7 +126,6 @@ iframe {
 button {
     pointer-events: fill;
     border: none;
-    /*solid 2px #EFC69B;*/
     color: white;
     background-color: #FF8A5B;
     z-index: 2;
@@ -232,6 +231,10 @@ img.article_img_newton:focus {
     }
 }
 
+.explore_body {
+    background-image: linear-gradient(to right, #1E1E24, #323031);
+}
+
 .glcanvas {
     padding-left: 0;
     padding-right: 0;
@@ -239,6 +242,25 @@ img.article_img_newton:focus {
     margin-right: auto;
     display: block;
     width: 1080px;
+}
+
+.points {
+    margin-top: 2%;
+    cursor: pointer;
+    background-color: #e7b083;
+    width: 20%;
+    display: table;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.points li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 22px;
+    color: #333333;
 }
 
 footer {
