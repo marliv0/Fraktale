@@ -5,9 +5,8 @@
     <title>Theorie hinter Fraktalen</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="author" content="Marko Livajusic">
-    <meta name="keywords" content="Fraktale, Mandelbrot-Menge, komplexe Zahlen">
-    <meta name="description"
-        content="Darstellung berühmter Fraktale und ihrer geometrischen Muster mithilfe von Mathematik">
+    <meta name="keywords" content="Fraktale, Mandelbrot-Menge, komplexe Zahlen, Theorie, Mathe hinter Fraktalen">
+    <meta name="description" content="Mathematischer Hintergrund zu Fraktalen">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/index.js"></script>
@@ -166,26 +165,27 @@
             <h3 class="topic" id="ErklärungJulia">Erklärung</h3>
             Mit anderen Worten, es gibt unendlich viele Julia-Mengen, die jeweils
             für einen bestimmten Wert von c definiert sind, wobei die Julia-Mengen mit kleineren Werten von c (d. h. |c|
-            kleriner ~ 2) grafisch besonders interessant sind. Der einfache Ausdruck f(z)=z2 + c hat bei einmaliger Verwendung
-                wenig Potenzial, etwas Interessantes zu erzeugen - nur durch wiederholte Iteration kann die Julia-Menge
-                definiert werden. Wenn die Ausgabe des Ausdrucks f(z) als neuer Wert von z in den Ausdruck zurückgeführt
-                wird, nennt man dies Iteration, eine Art Rückkopplungsprozess.
-                <br><br>
-                Somit gilt für jedes n: zn+1=f(z)=zn2 + c
-                und jeder neu berechnete Wert von f(z) wird über die Rückkopplungsschleife zum nachfolgenden Eingabewert
-                von z. Beachten Sie, dass Autoren rein reale Werte von c wie -1+0i in der Regel als "-1" ausdrücken, was
-                Laien verwirren kann, die nicht wissen, dass c immer noch in der komplexen Ebene definiert ist. Für den
-                speziellen Fall, dass c=0+0i ist, ist die Julia-Menge einfach ein (nicht fraktaler) Kreis mit Radius 1.
-                <br><br>
-                Eine schöne geometrische Erklärung des Ergebnisses der Quadrierung einer komplexen Zahl und der Addition
-                einer komplexen Konstante findet sich auf der Website Chaos Hypertextbook (Elert 22.shtml). Für jedes z
-                besteht diese Transformation aus einer Kontraktion (für |z|<1) oder Dilatation (für |z|>1), die sich aus
+            kleriner ~ 2) grafisch besonders interessant sind. Der einfache Ausdruck f(z)=z2 + c hat bei einmaliger
+            Verwendung
+            wenig Potenzial, etwas Interessantes zu erzeugen - nur durch wiederholte Iteration kann die Julia-Menge
+            definiert werden. Wenn die Ausgabe des Ausdrucks f(z) als neuer Wert von z in den Ausdruck zurückgeführt
+            wird, nennt man dies Iteration, eine Art Rückkopplungsprozess.
+            <br><br>
+            Somit gilt für jedes n: zn+1=f(z)=zn2 + c
+            und jeder neu berechnete Wert von f(z) wird über die Rückkopplungsschleife zum nachfolgenden Eingabewert
+            von z. Beachten Sie, dass Autoren rein reale Werte von c wie -1+0i in der Regel als "-1" ausdrücken, was
+            Laien verwirren kann, die nicht wissen, dass c immer noch in der komplexen Ebene definiert ist. Für den
+            speziellen Fall, dass c=0+0i ist, ist die Julia-Menge einfach ein (nicht fraktaler) Kreis mit Radius 1.
+            <br><br>
+            Eine schöne geometrische Erklärung des Ergebnisses der Quadrierung einer komplexen Zahl und der Addition
+            einer komplexen Konstante findet sich auf der Website Chaos Hypertextbook (Elert 22.shtml). Für jedes z
+            besteht diese Transformation aus einer Kontraktion (für |z|<1) oder Dilatation (für |z|>1), die sich aus
                 der Multiplikation mit |z| ergibt, sowie aus einer Verdoppelung des Polarwinkels (d.h. des Arguments)
                 von z und einer anschließenden Translation mit c.
         </p>
         <p>
-           <h3 class="topic" id="IterationenJulia">Iterationen</h2>
-            Für jeden gegebenen Anfangswert von z, z0, gibt es zwei Möglichkeiten, was mit den iterierten Werten von
+            <h3 class="topic" id="IterationenJulia">Iterationen</h2>
+                Für jeden gegebenen Anfangswert von z, z0, gibt es zwei Möglichkeiten, was mit den iterierten Werten von
                 f(z) passiert, wenn n gegen unendlich wächst: Entweder kann f(z) unbegrenzt weiter wachsen oder es
                 bleibt begrenzt. Punkte z0 in der komplexen Ebene, die bei aufeinanderfolgenden Iterationen von f(z)
                 nicht begrenzt bleiben, werden als Punkte in der Fluchtmenge Ec bezeichnet. Alle anderen Punkte in der
@@ -199,25 +199,26 @@
 
         </p>
         <h3 class="topic" id="Literatur">Literatur</h3>
-                In der Literatur scheint es eine kleine definitorische Verwirrung darüber zu geben, ob die Randpunkte
-                (d. h. die Julia-Menge) selbst Teil der Gefangenenmenge sind, aber das muss der Fall sein. Die komplexe
-                Ebene ist nur in gefangene und entweichende Punkte unterteilt, so dass die Randpunkte zu Pc gehören
-                müssen, da sie nicht zu Ec gehören können (sonst würden sie bei wiederholten Iterationen entweichen, was
-                nicht der Fall ist). Es gibt Julia-Mengen (d. h. von Randpunkten), die keine inneren Gefangenenpunkte
-                einschließen. Da Pc per Definition das ist, was von der komplexen Ebene übrig bleibt, nachdem Ec
-                entfernt wurde, müssen die Rand- und die Gefangenenpunkte übereinstimmen. Ein Beispiel für eine solche
-                Menge ist Jc für c=0+i (Peitgen et al. 1992 S. 798).
+        In der Literatur scheint es eine kleine definitorische Verwirrung darüber zu geben, ob die Randpunkte
+        (d. h. die Julia-Menge) selbst Teil der Gefangenenmenge sind, aber das muss der Fall sein. Die komplexe
+        Ebene ist nur in gefangene und entweichende Punkte unterteilt, so dass die Randpunkte zu Pc gehören
+        müssen, da sie nicht zu Ec gehören können (sonst würden sie bei wiederholten Iterationen entweichen, was
+        nicht der Fall ist). Es gibt Julia-Mengen (d. h. von Randpunkten), die keine inneren Gefangenenpunkte
+        einschließen. Da Pc per Definition das ist, was von der komplexen Ebene übrig bleibt, nachdem Ec
+        entfernt wurde, müssen die Rand- und die Gefangenenpunkte übereinstimmen. Ein Beispiel für eine solche
+        Menge ist Jc für c=0+i (Peitgen et al. 1992 S. 798).
 
-                Ich habe dies nicht explizit gesehen, vermute aber, dass es keine Julia-Mengen gibt, die keine
-                Fluchtpunkte haben, die vollständig von Gefangenenpunkten umgeben sind.
+        Ich habe dies nicht explizit gesehen, vermute aber, dass es keine Julia-Mengen gibt, die keine
+        Fluchtpunkte haben, die vollständig von Gefangenenpunkten umgeben sind.
 
-                Wie bereits erwähnt, können Julia-Mengen auch aus höhergradigen und komplexeren Ausdrücken gebildet
-                werden. Im Folgenden sind Julia-Mengen für die iterierten Funktionen f(z) = z4 + c und f(z) = z5 + c
-                aufgeführt werden.
+        Wie bereits erwähnt, können Julia-Mengen auch aus höhergradigen und komplexeren Ausdrücken gebildet
+        werden. Im Folgenden sind Julia-Mengen für die iterierten Funktionen f(z) = z4 + c und f(z) = z5 + c
+        aufgeführt werden.
         </p>
 
         <h3 class="topic" id="BildJulia">Ergebnis</h3>
-        <p>Deshalb erhält man bei der Visualisierung des Julia-Fraktals durch oben aufgeführte mathematische Funktionen folgendes Resultat:</p>
+        <p>Deshalb erhält man bei der Visualisierung des Julia-Fraktals durch oben aufgeführte mathematische Funktionen
+            folgendes Resultat:</p>
         <img src="../../res/julia.jpg" width="50%" height="auto" class="example_julia">
 
 

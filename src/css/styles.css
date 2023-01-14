@@ -1,3 +1,9 @@
+/**
+ * Zentrale CSS-Datei, die von jeder HTML-Seite benutzt wird.
+ * 
+ * 2023 Marko Livajusic (marko_livajusic0 <at> protonmail.com) 
+ */
+
 /* Font, welcher benutzt wird */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
