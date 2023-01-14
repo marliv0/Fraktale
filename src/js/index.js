@@ -10,7 +10,7 @@
  * Funktion für das Scrollen bis zum div "articles"
  */
 function scrollToArticles() {
-    document.querySelector(".articles").scrollIntoView();
+    document.getElementById("articles").scrollIntoView();
 }
 
 /**
