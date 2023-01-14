@@ -15,8 +15,7 @@ function scrollToArticles() {
  */
 function fillSidebar() {
     const topics = document.getElementsByClassName("topic");
-
-    for (let i = 1; i < topics.length + 1; i++) {
+    for (let i = 0; i < topics.length; i++) {
         const element = document.createElement("li");
         let topic = topics[i].innerText;
         let id = topics[i].id;
@@ -25,11 +24,11 @@ function fillSidebar() {
         element.style = "margin: 10px 0;";
 
         element.onmouseover = function () {
-            element.style.cssText += "color: white;background-color:#282828";
+            element.style.cssText += "color: white; background-color: #282828";
         }
 
         element.onmouseleave = function () {
-            element.style.cssText += "color: #818181;background-color:#111111;";
+            element.style.cssText += "color: #818181; background-color: #111111;";
         }
 
         element.onclick = function () {
@@ -37,6 +36,9 @@ function fillSidebar() {
         };
 
         switch (topics[i].nodeName) {
+            case "H2":
+                element.style = "padding-left: 5px; font-size: 24px;"
+                break;
             case "H3":
                 element.style = "padding-left: 10px;font-size: 18px; margin: 5px;";
                 break;
@@ -50,13 +52,9 @@ const callback = (entries) => {
     entries.forEach(
         (entry) => {
             if (entry.isIntersecting) {
-                console.log("The element is intersecting >");
-                document.getElementsByClassName("introduction").style.animation="fadeIn ease 50s;";
-                // entry.style = "fadeIn ease 50s;";
-                // entry.target.style.animation=entry.target.dataset.animate;
+                entry.target.style.cssText += "animation: fadeIn 2s;";
             } else {
-                // //We take of the animation if not in view
-                // entry.target.style.animation = "none";
+                entry.target.style.animation = "none";
             }
         }
     );
@@ -64,6 +62,8 @@ const callback = (entries) => {
 }
 
 let observer = new IntersectionObserver(callback);
-const intro = document.querySelector('.introduction');
+let elements = [document.getElementById("introduction"), document.getElementById("articles")];
 
-observer.observe(intro);
+for (let i = 0; i < elements.length; i++) {
+    observer.observe(elements[i]);
+}

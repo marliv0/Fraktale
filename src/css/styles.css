@@ -35,7 +35,7 @@ body {
 
 .navbar {
     z-index: 3;
-    background-color: #EFC69B;
+    background-image: linear-gradient(45deg, #EFC69B, #DF9B6D);
     width: 100%;
     overflow: hidden;
     text-align: center;
@@ -84,13 +84,16 @@ iframe {
     height: 100%;
 }
 
-.introduction {
+#introduction {
     position: absolute;
     top: 115%;
     left: 25%;
     width: 50vw;
     display: inline-block;
-    background-image: linear-gradient(45deg, #DF9B6D, #DAAF44);/* #F2E3BC);*/
+    background-color: rgb(40, 36, 36);
+    border: solid 2px #EFC69B;
+    animation: none;
+    animation-iteration-count: 1
 }
 
 .intro_title {
@@ -117,6 +120,7 @@ iframe {
 button {
     pointer-events: fill;
     border: none;
+    /*solid 2px #EFC69B;*/
     color: white;
     background-color: #FF8A5B;
     z-index: 2;
@@ -134,11 +138,13 @@ button {
     }
 }
 
-.articles {
+#articles {
     font-size: 32px;
     margin-top: 95%;
     text-align: center;
-    background-image: linear-gradient(55deg, #1E1E24,#323031);
+    background-image: linear-gradient(55deg, #1E1E24, #323031);
+    animation: none;
+    animation-iteration-count: 1
 }
 
 .row {
@@ -169,6 +175,10 @@ img.article_img_newton:focus {
 @keyframes fadeIn {
     0% {
         opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
     }
 
     100% {
@@ -231,7 +241,7 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #EFC69B;
+    background-image: linear-gradient(45deg, #DF9B6D, #EFC69B);
     text-align: center;
     min-height: 1.5%;
     text-transform: uppercase;
