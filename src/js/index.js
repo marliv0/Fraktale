@@ -74,11 +74,13 @@ const callback = (entries) => {
 
 }
 
-let observer = new IntersectionObserver(callback);
+docuement.addEventListener("DOMContentLoaded", function () {
+    let observer = new IntersectionObserver(callback);
 
-// Elemente, deren Position auf dem Bildschirm wir überprüfen sollen.
-let elements = [document.getElementById("introduction"), document.getElementById("articles")];
+    // Elemente, deren Position auf dem Bildschirm wir überprüfen sollen.
+    let elements = [document.getElementById("introduction"), document.getElementById("articles")];
 
-for (let i = 0; i < elements.length; i++) {
-    observer.observe(elements[i]);
-}
+    for (let i = 0; i < elements.length; i++) {
+        observer.observe(elements[i]);
+    }
+})
